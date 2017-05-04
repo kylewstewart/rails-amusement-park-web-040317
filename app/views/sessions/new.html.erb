@@ -1,0 +1,11 @@
+<h2> Log In </h2>
+
+<%= flash[:notice] %>
+
+<%= form_tag sessions_path do %>
+  <%= text_field_tag :name %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Log In" %>
+<%end%>
+<br>
+<p> <%= link_to "Register to enjoy all the fun!!!!", new_user_path %> </p>
