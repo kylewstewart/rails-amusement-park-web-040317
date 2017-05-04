@@ -12,12 +12,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params(:name, :password, :nausea, :happiness, :tickets, :height))
     if @user.save
-      redirect_to new_session_path
-      # save session ...
-      
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       render :new
     end
+  end
+
+  def show
+    # @user = User.find(params[:id])
+
   end
 
   private

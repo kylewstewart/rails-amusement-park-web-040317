@@ -33,3 +33,5 @@ You're going to be building an amusement park. There will be users, attractions,
 
 
 <a href='https://learn.co/lessons/rails-amusement-park' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<%= csrf_meta_tags %>

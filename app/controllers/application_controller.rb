@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  def session
+    session ||=[]
+
+  end
+
   def current_user
     @current_user = User.find_by(id: sessions[:user_id])
   end
