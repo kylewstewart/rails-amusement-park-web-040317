@@ -1,11 +1,22 @@
 <h1><%=@attraction.name%></h1>
 
-<p> Tickets: <%=@attraction.tickets%></p>
-<p> Height: <%=@attraction.min_height%></p>
-<%=button_to "Go on this ride", user_path(@user)%>
-<%if @user.admin %>
-  <%=link_to "Edit attraction", edit_attraction_path%>
-<%end%>
+<p> Tickets: <%=@attraction.tickets%> </p>
+<p> Height: <%=@attraction.min_height%> </p>
 
-<%=link_to "My home page", user_path(@user)%>
+<br>
+<%= form_tag("/rides") do %>
+  <%= hidden_field_tag("attraction_id", "#{@attraction.id}") %>
+  <%= submit_tag "Go on this ride" %> <br>
+<% end %>
+<br>
+
+<% if @user.admin %>
+  <%= link_to "Edit attraction", edit_attraction_path(@attraction) %> <br>
+<% end %>
+
+<br>
+<%= link_to "Return to all Attractions", attractions_path %> <br>
+<br>
+<%=link_to "My home page", user_path(@user)%> <br>
+<br>
 <%=link_to "Log Out", logout_path%>

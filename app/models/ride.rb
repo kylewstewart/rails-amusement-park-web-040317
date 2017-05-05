@@ -39,7 +39,7 @@ class Ride < ActiveRecord::Base
     elsif tickets? && !height?
       {user_ride_eligible: false, response_to_user: "Sorry. You are not tall enough to ride the #{attraction.name}."}
     else
-      {user_ride_eligible: true, response_to_user: "Jump on board."}
+      {user_ride_eligible: true, response_to_user: "Thanks for riding the #{attraction.name}!"}
     end
   end
 

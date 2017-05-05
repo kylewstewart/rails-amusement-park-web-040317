@@ -1,11 +1,12 @@
 <h1><%=@user.name%></h1>
-
+<%= flash[:notice] %> <br>
+<br>
 <p> Mood: <%= @user.mood %></p>
 <p> Tickets: <%=@user.tickets%></p>
 <p> Height: <%=@user.height%></p>
 <%if @user.admin %>
   <h3>ADMIN</h3>
 <%end%>
-
-<%=link_to "See attractions", attractions_path%>
-<%=link_to "Log Out", logout_path%>
+<br>
+<p> <%= link_to "See attractions", attractions_path %> </p>
+<p> <%= link_to "Log Out", logout_path %> </p>
