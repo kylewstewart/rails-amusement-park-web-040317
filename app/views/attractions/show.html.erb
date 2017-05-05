@@ -1,0 +1,11 @@
+<h1><%=@attraction.name%></h1>
+
+<p> Tickets: <%=@attraction.tickets%></p>
+<p> Height: <%=@attraction.min_height%></p>
+<%=button_to "Go on this ride", user_path(@user)%>
+<%if @user.admin %>
+  <%=link_to "Edit attraction", edit_attraction_path%>
+<%end%>
+
+<%=link_to "My home page", user_path(@user)%>
+<%=link_to "Log Out", logout_path%>

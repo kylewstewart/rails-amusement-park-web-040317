@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authorize_user
     if !logged_in?
       flash[:notice] = "You are not authorized to peform this action"
-      redirect_to new_session_path
+      redirect_to '/'
     end
   end
 

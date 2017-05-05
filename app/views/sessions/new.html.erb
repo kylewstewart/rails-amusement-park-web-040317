@@ -2,15 +2,26 @@
 
 <%= flash[:notice] %>
 
-<%= form_for(@user) do |f| %>
+
+<%= form_tag("/login") do %>
+  <%= label_tag('user[name]', "Name") %>
+  <%= text_field_tag('user[name]') %>
+
+  <%= label_tag('user[password]', "Password") %>
+  <%= password_field_tag ('user[password]') %>
+
+  <%= submit_tag "Sign In" %>
+<% end %>
+
+<!-- <%= form_for(@user) do |f| %>
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br>
 
   <%= f.label :password %> <br>
   <%= f.password_field :password %> <br>
   <br>
-  <%= f.submit %>
-<% end %>
+  <%= f.submit "Sign In"%>
+<% end %> -->
 
 <br>
 <p> <%= link_to "Sign Up", new_user_path %> </p>

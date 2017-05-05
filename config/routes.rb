@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :attractions, :rides
 
+  get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/signin', to: 'sessions#new', as: 'signin'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  delete '/logout', to: 'sessions#destroy', as: 'logout_delete'
+  post 'login', to: 'sessions#create'
 
 end

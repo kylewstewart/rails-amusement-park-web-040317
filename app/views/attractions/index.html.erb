@@ -1,0 +1,8 @@
+<h3>Attractions </h3>
+
+<%@attractions.each do |a|%>
+  <p><%= link_to "Go on #{a.name}", attraction_path(a)%></p>
+<%end%>
+
+<p> <%= link_to "Sign In", signin_path %> </P>
+<p> <%= link_to "Sign Up", new_user_path %> </p>
