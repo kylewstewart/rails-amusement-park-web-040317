@@ -2,14 +2,15 @@
 
 <%= flash[:notice] %>
 
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
 
-<form action="/session" method="post">
-  <label for="user_name"> Name: </label>
-  <input type="text" name="user[name]" id="user_name">
-  <label for="user_password"> Name: </label>
-  <input type="text" name="user[password]" id="user_password">
-  <button type="submit">Log In</button>
-</form>
+  <%= f.label :password %> <br>
+  <%= f.password_field :password %> <br>
+  <br>
+  <%= f.submit %>
+<% end %>
 
 <br>
-<p> <%= link_to "Register to enjoy all the fun!!!!", new_user_path %> </p>
+<p> <%= link_to "Sign Up", new_user_path %> </p>

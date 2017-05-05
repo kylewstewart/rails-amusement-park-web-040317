@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params(:name, :password, :nausea, :happiness, :tickets, :height))
+    @user = User.new(user_params(:name, :password, :nausea, :happiness, :tickets, :height, :admin))
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -20,8 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-
+    @user = User.find(params[:id])
   end
 
   private
